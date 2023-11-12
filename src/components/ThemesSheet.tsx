@@ -12,9 +12,21 @@ import {
 } from "@/components/ui/sheet";
 import { CheckIcon } from "lucide-react";
 import { updateAppState, useAppState } from "@/state/appState";
+import { themes } from "@/registry/themes";
+import { useTheme } from "next-themes";
+import React from "react";
 
 export function ThemesSheet() {
   const appState = useAppState();
+
+  const { resolvedTheme: mode } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -26,28 +38,33 @@ export function ThemesSheet() {
           <SheetDescription>Select Theme</SheetDescription>
         </SheetHeader>
         <SheetFooter>
-          {["red", "blue"].map((theme) => {
-            const isActive = appState.theme === theme;
+          {["zinc", "rose", "blue", "green", "orange"].map((color) => {
+            const theme = themes.find((theme) => theme.name === color);
+            const isActive = appState.theme === color;
+
+            if (!theme) {
+              return null;
+            }
             return (
-              <div key={theme}>
-                {theme}
+              <div key={color}>
+                {color}
                 <p></p>
 
                 <button
-                  onClick={() => updateAppState({ theme:theme })}
+                  onClick={() => updateAppState({ theme: theme.name })}
                   className={cn(
                     "flex h-9 w-9 items-center justify-center rounded-full border-2 text-xs",
                     isActive
                       ? "border-[--theme-primary]"
                       : "border-transparent",
                   )}
-                  // style={
-                  //   {
-                  //     "--theme-primary": `hsl(${theme?.activeColor[
-                  //       mode === "dark" ? "dark" : "light"
-                  //     ]})`,
-                  //   } as React.CSSProperties
-                  // }
+                  style={
+                    {
+                      "--theme-primary": `hsl(${theme?.activeColor[
+                        mode === "dark" ? "dark" : "light"
+                      ]})`,
+                    } as React.CSSProperties
+                  }
                 >
                   <span
                     className={cn(
@@ -56,7 +73,6 @@ export function ThemesSheet() {
                   >
                     {isActive && <CheckIcon className="h-4 w-4 text-white" />}
                   </span>
-                  <span>{theme}</span>
                 </button>
               </div>
             );
