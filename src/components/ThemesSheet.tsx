@@ -38,7 +38,7 @@ export function ThemesSheet() {
           <SheetDescription>Select Theme</SheetDescription>
         </SheetHeader>
         <SheetFooter>
-          {["zinc", "rose", "blue", "green", "orange"].map((color) => {
+          {["slate", "rose", "blue", "green", "orange"].map((color) => {
             const theme = themes.find((theme) => theme.name === color);
             const isActive = appState.theme === color;
 

@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
+import "./themes.css";
+
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ThemeWrapper } from "@/components/ThemeWrapper";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +28,10 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem={false}
         >
-          {children}
+          <ThemeWrapper>
+            {children}
+            <ThemeSwitcher />
+          </ThemeWrapper>
         </ThemeProvider>
       </body>
     </html>

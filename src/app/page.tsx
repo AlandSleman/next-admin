@@ -7,7 +7,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main className="bg-background">
-      <Button variant="ghost">My Button</Button>
+      <Button >My Button</Button>
       <ModeToggle/>
       <OverviewCard/>
       <ThemesSheet/>
