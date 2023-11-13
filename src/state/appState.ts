@@ -6,7 +6,7 @@ export type State = {
 }
 
 export const $appState = atom<State>({
-  theme: "",
+  theme: "blue",
 })
 
 export function useAppState() {
