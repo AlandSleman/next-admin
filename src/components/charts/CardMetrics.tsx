@@ -1,6 +1,6 @@
-"use client"
-import { useTheme } from "next-themes"
-import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts"
+"use client";
+import { useTheme } from "next-themes";
+import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
 
 import {
   Card,
@@ -8,9 +8,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { themes } from "@/registry/themes"
-import { useAppState } from "@/state/appState"
+} from "@/components/ui/card";
+import { themes } from "@/registry/themes";
+import { useAppState } from "@/state/appState";
 
 const data = [
   {
@@ -41,20 +41,20 @@ const data = [
     average: 349,
     today: 430,
   },
-]
+];
 
 export function CardsMetric() {
-  const { theme: mode } = useTheme()
-  const state = useAppState()
+  const { theme: mode } = useTheme();
+  const state = useAppState();
 
-  const theme = themes.find((theme) => theme.name === state.theme)
+  const theme = themes.find((theme) => theme.name === state.theme);
 
   return (
-    <Card>
+    <Card className="w-[400px]">
       <CardHeader>
-        <CardTitle>Exercise Minutes</CardTitle>
+        <CardTitle>Monthly Sales</CardTitle>
         <CardDescription>
-          Your excercise minutes are ahead of where you normally are.
+          Track monthly sales trends over the past year to identify peak months.
         </CardDescription>
       </CardHeader>
       <CardContent className="pb-4">
@@ -93,10 +93,10 @@ export function CardsMetric() {
                           </div>
                         </div>
                       </div>
-                    )
+                    );
                   }
 
-                  return null
+                  return null;
                 }}
               />
               <Line
@@ -111,9 +111,9 @@ export function CardsMetric() {
                   {
                     stroke: "var(--theme-primary)",
                     opacity: 0.25,
-                    "--theme-primary": `hsl(${
-                      theme?.cssVars[mode === "dark" ? "dark" : "light"].primary
-                    })`,
+                    "--theme-primary": `hsl(${theme?.cssVars[
+                      mode === "dark" ? "dark" : "light"
+                    ].primary})`,
                   } as React.CSSProperties
                 }
               />
@@ -128,9 +128,9 @@ export function CardsMetric() {
                 style={
                   {
                     stroke: "var(--theme-primary)",
-                    "--theme-primary": `hsl(${
-                      theme?.cssVars[mode === "dark" ? "dark" : "light"].primary
-                    })`,
+                    "--theme-primary": `hsl(${theme?.cssVars[
+                      mode === "dark" ? "dark" : "light"
+                    ].primary})`,
                   } as React.CSSProperties
                 }
               />
@@ -139,5 +139,5 @@ export function CardsMetric() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
