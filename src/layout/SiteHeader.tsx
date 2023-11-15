@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/ModeToggle";
 import { ThemesSheet } from "@/components/ThemesSheet";
 import { cookies } from "next/headers";
 import Link from "next/link";
@@ -20,6 +21,7 @@ export function SiteHeader() {
           {/* </div> */}
           {/* <Search /> */}
           <ThemesSheet/>
+          <ModeToggle/>
           {token ? (
             <Link href="/dashboard">Dashboard</Link>
           ) : (

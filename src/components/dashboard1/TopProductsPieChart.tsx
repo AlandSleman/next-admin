@@ -44,7 +44,7 @@ export function TopProductsPieChart() {
   );
 
   return (
-    <Card className="w-[800px]">
+    <Card className="w-[400px]">
       <CardHeader>
         <CardTitle>Top Products</CardTitle>
         <CardDescription>
@@ -76,8 +76,10 @@ export function TopProductsPieChart() {
               </Pie>
               <Tooltip />
               <Legend
-                // @ts-ignore
-                formatter={(_, entry) => <span className="font-bold">{entry?.payload?.product}</span>}
+                formatter={(_, entry) => (
+                  // @ts-ignore
+                  <span className="font-bold">{entry?.payload?.product}</span>
+                )}
               />
             </PieChart>
           </ResponsiveContainer>

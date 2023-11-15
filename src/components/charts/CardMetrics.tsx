@@ -51,12 +51,6 @@ export function CardsMetric() {
 
   return (
     <Card className="w-[400px]">
-      <CardHeader>
-        <CardTitle>Monthly Sales</CardTitle>
-        <CardDescription>
-          Track monthly sales trends over the past year to identify peak months.
-        </CardDescription>
-      </CardHeader>
       <CardContent className="pb-4">
         <div className="h-[200px]">
           <ResponsiveContainer width="100%" height="100%">

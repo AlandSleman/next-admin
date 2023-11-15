@@ -14,7 +14,7 @@ import { TopProductsPieChart } from "@/components/dashboard1/TopProductsPieChart
 export default function Home() {
   return (
     <main className="bg-background p-4 space-y-2 rounded-lg">
-      <div className="flex gap-6">
+      <div className="flex gap-12">
         <SalesCard />
         <ProductsCard />
         <SatisfactionCard/>
@@ -22,9 +22,9 @@ export default function Home() {
       </div>
       <div className="flex gap-6">
         <ProductSalesChart />
-        <SalesChart />
         <TopCountriesCard />
       </div>
+        <SalesChart />
       <div className="flex gap-6">
         <ProductSalesChart />
         <SalesChart />
