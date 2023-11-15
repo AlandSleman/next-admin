@@ -30,7 +30,7 @@ export function TopCountriesCard() {
   return (
     <Card className="w-[800px]">
       <CardHeader>
-        <CardTitle>Top Countries</CardTitle>
+        <CardTitle>Top Products</CardTitle>
         <CardDescription>A table of top countries and their sales.</CardDescription>
       </CardHeader>
       <CardContent className="pb-4">

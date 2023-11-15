@@ -12,6 +12,8 @@ import {
   Trash2Icon,
   Users2,
   VideoIcon,
+  CircleDollarSign,Package
+  
 } from "lucide-react"
 
 type Section = {

@@ -1,22 +1,25 @@
-import OverviewCard from "@/components/Card";
-import { ModeToggle } from "@/components/ModeToggle";
-import { ThemesSheet } from "@/components/ThemesSheet";
 import { CardsMetric } from "@/components/charts/CardMetrics";
 import { BalanceBarChart } from "@/components/charts/LineChart";
+import {
+  ExpensesCard,
+  ProductsCard,
+  SalesCard,
+  SatisfactionCard,
+} from "@/components/dashboard1/Cards";
 import { ProductSalesChart } from "@/components/dashboard1/ProductSalesChart";
 import { SalesChart } from "@/components/dashboard1/SalesChart";
 import { TopCountriesCard } from "@/components/dashboard1/TopCountriesCard";
 import { TopProductsPieChart } from "@/components/dashboard1/TopProductsPieChart";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="bg-background p-4 rounded-lg">
-      <Button>My Button</Button>
-      <ModeToggle />
-      <OverviewCard />
-      <ThemesSheet />
-      <p>page 1</p>
+    <main className="bg-background p-4 space-y-2 rounded-lg">
+      <div className="flex gap-6">
+        <SalesCard />
+        <ProductsCard />
+        <SatisfactionCard/>
+        <ExpensesCard />
+      </div>
       <div className="flex gap-6">
         <ProductSalesChart />
         <SalesChart />
@@ -26,8 +29,7 @@ export default function Home() {
         <ProductSalesChart />
         <SalesChart />
       </div>
-        <TopProductsPieChart />
-      <p>end page1</p>
+      <TopProductsPieChart />
       <CardsMetric />
       <BalanceBarChart />
     </main>

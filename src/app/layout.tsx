@@ -34,7 +34,7 @@ export default function RootLayout({
             <Sidebar />
             <div className="relative  lg:ml-[240px] flex min-h-screen flex-col">
               <SiteHeader />
-              <main className="p-8 bg-muted">{children}</main>
+              <main className="p-8 bg-muted/50">{children}</main>
             </div>
             <ThemeSwitcher />
           </ThemeWrapper>

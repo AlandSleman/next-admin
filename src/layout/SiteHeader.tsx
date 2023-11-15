@@ -1,3 +1,4 @@
+import { ThemesSheet } from "@/components/ThemesSheet";
 import { cookies } from "next/headers";
 import Link from "next/link";
 
@@ -18,6 +19,7 @@ export function SiteHeader() {
           {/*   <UserAvatar /> */}
           {/* </div> */}
           {/* <Search /> */}
+          <ThemesSheet/>
           {token ? (
             <Link href="/dashboard">Dashboard</Link>
           ) : (
