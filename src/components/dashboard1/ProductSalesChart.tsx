@@ -70,28 +70,31 @@ export function ProductSalesChart() {
               <Bar
                 dataKey="salesPrevYear"
                 name="Previous Year"
-                fill="#7AF3CD" 
+                fill="#7AF3CD"
               />
               <Tooltip
-                cursor={{ fill: `hsl(${theme?.cssVars[mode === "dark" ? "dark" : "light"]
-                  .accent})`,opacity:0.5 }}
+                cursor={{
+                  fill: `hsl(${theme?.cssVars[
+                    mode === "dark" ? "dark" : "light"
+                  ].accent})`,
+                  opacity: 0.5,
+                }}
                 content={({ active, payload }) => {
                   if (active && payload && payload.length) {
-                    console.log("pp",payload)
                     return (
                       <div className="flex flex-col rounded-lg border bg-background p-3 shadow-sm">
-                          <span className="font-bold">
-                            {payload[0].payload.month}
-                          </span>
-                          <span className="font-bold">
-                            {payload[0].payload.product}
-                          </span>
-                          <span className="font-bold">
-                            This Year: {payload[0].value}
-                          </span>
-                          <span className="font-bold">
-                            Previous Year: {payload[0].value}
-                          </span>
+                        <span className="font-bold">
+                          {payload[0].payload.month}
+                        </span>
+                        <span className="font-bold">
+                          {payload[0].payload.product}
+                        </span>
+                        <span className="font-bold">
+                          This Year: {payload[0].value}
+                        </span>
+                        <span className="font-bold">
+                          Previous Year: {payload[0].value}
+                        </span>
                       </div>
                     );
                   }
