@@ -7,6 +7,8 @@ import "./themes.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ThemeWrapper } from "@/components/ThemeWrapper";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { Sidebar } from "@/layout/Sidebar";
+import { SiteHeader } from "@/layout/SiteHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +31,11 @@ export default function RootLayout({
           enableSystem={false}
         >
           <ThemeWrapper>
-            {children}
+            <Sidebar />
+            <div className="relative  lg:ml-[240px] flex min-h-screen flex-col">
+              <SiteHeader />
+              <main className="p-8 bg-muted">{children}</main>
+            </div>
             <ThemeSwitcher />
           </ThemeWrapper>
         </ThemeProvider>

@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="bg-background">
+    <main className="bg-background p-4 rounded-lg">
       <Button>My Button</Button>
       <ModeToggle />
       <OverviewCard />
@@ -25,8 +25,8 @@ export default function Home() {
       <div className="flex gap-6">
         <ProductSalesChart />
         <SalesChart />
-        <TopProductsPieChart />
       </div>
+        <TopProductsPieChart />
       <p>end page1</p>
       <CardsMetric />
       <BalanceBarChart />

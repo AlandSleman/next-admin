@@ -14,7 +14,7 @@ export function ThemeWrapper({
 }: ThemeWrapperProps) {
   const appState = useAppState();
   return (
-    <main
+    <div
       className={cn(
         `theme-${defaultTheme || appState.theme}`,
         "w-full h-full",
@@ -27,6 +27,6 @@ export function ThemeWrapper({
       }
     >
       {children}
-    </main>
+    </div>
   );
 }
