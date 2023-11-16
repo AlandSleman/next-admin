@@ -64,6 +64,7 @@ export function SalesChart() {
               margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
             >
               <YAxis />
+
               <Area
                 type="monotone"
                 dataKey="sales"
