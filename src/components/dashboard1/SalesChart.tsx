@@ -65,6 +65,7 @@ export function SalesChart() {
             >
               <YAxis />
 
+
               <Area
                 type="monotone"
                 dataKey="sales"
