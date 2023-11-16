@@ -4,12 +4,14 @@ import { useTheme } from "next-themes";
 import {
   ResponsiveContainer,
   LineChart,
+  AreaChart,
   Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
+  Area,
 } from "recharts";
 
 import {
@@ -44,7 +46,7 @@ export function SalesChart() {
   const theme = themes.find((theme) => theme.name === state.theme);
 
   return (
-    <Card className="w-[600px]">
+    <Card className="w-[950px]">
       <CardHeader>
         <CardTitle>Sales and Expenses</CardTitle>
         <CardDescription>
@@ -55,30 +57,37 @@ export function SalesChart() {
       <CardContent className="pb-4">
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart
+            <AreaChart
               width={600}
               height={300}
               data={monthlySalesData}
               margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
             >
               <YAxis />
-              <Line
+              <Area
                 type="monotone"
                 dataKey="sales"
                 name="Sales"
                 stroke={`hsl(${theme?.cssVars[
                   mode === "dark" ? "dark" : "light"
                 ].primary})`}
+                fill={`hsl(${theme?.cssVars[
+                  mode === "dark" ? "dark" : "light"
+                ].primary})`}
               />
-              <Line
+              <Area
                 type="monotone"
                 dataKey="expenses"
                 name="Expenses"
                 stroke={`hsl(${theme?.cssVars[
                   mode === "dark" ? "dark" : "light"
                 ].primary})`}
-                opacity={0.45}
+                fill={`hsl(${theme?.cssVars[
+                  mode === "dark" ? "dark" : "light"
+                ].primary})`}
+                fillOpacity={0.45}
               />
+              <Legend/>
               <Tooltip
                 content={({ active, payload }) => {
                   if (active && payload && payload.length) {
@@ -109,7 +118,7 @@ export function SalesChart() {
                   return null;
                 }}
               />
-            </LineChart>
+            </AreaChart>
           </ResponsiveContainer>
         </div>
       </CardContent>

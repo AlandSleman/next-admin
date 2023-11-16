@@ -10,7 +10,7 @@ import { useAppState } from "@/state/appState";
 const data = [
   { month: "Jan", average: 400, target: 240 },
   { month: "Feb", average: 300, target: 139 },
-  { month: "Mar", average: 200, target: 980 },
+  { month: "Mar", average: 200, target: 480 },
   { month: "Apr", average: 278, target: 390 },
   { month: "May", average: 189, target: 480 },
   { month: "Jun", average: 239, target: 380 },
@@ -48,6 +48,7 @@ export function SalesCard() {
                 bottom: 0,
               }}
             >
+              <XAxis dataKey="month"/>
               <Tooltip
                 cursor={{
                   fill: `hsl(${theme?.cssVars[

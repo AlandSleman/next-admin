@@ -44,11 +44,11 @@ export function TopProductsPieChart() {
   );
 
   return (
-    <Card className="w-[400px]">
+    <Card className="w-[600px]">
       <CardHeader>
-        <CardTitle>Top Products</CardTitle>
+        <CardTitle>Top Categories</CardTitle>
         <CardDescription>
-          Illustrating the top 5 products with a Pie chart.
+          Illustrating the top 5 categories with a Pie chart.
         </CardDescription>
       </CardHeader>
       <CardContent className="pb-4">
