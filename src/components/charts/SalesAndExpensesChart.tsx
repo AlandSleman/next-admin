@@ -35,7 +35,7 @@ const monthlySalesData = [
 
 export function SalesAndExpensesChart() {
   return (
-    <Card className="w-[800px]">
+    <Card className="2xl:w-[800px] w-full">
       <CardHeader>
         <CardTitle>Sales and Expenses</CardTitle>
         <CardDescription>
@@ -45,7 +45,7 @@ export function SalesAndExpensesChart() {
       </CardHeader>
       <CardContent className="pb-4">
         <div className="h-[300px]">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="99%" height="100%">
             <AreaChart
               width={600}
               height={300}

@@ -9,18 +9,18 @@ import { TopCategoriesPieChart } from "@/components/charts/TopCategoriesPieChart
 
 export default function Home() {
   return (
-    <main className="bg-background p-4 space-y-2 rounded-lg">
-      <div className="flex gap-8">
+    <main className="bg-background sm:p-6 py-6 space-y-6 rounded-lg">
+      <div className="flex lg:flex-nowrap flex-wrap md:justify-between justify-center gap-8">
         <SalesCard />
         <ProductsCard />
         <SatisfactionCard />
         <ExpensesCard />
       </div>
-      <div className="flex gap-6">
+      <div className="2xl:flex-row flex flex-col gap-6">
         <MonthlySalesChart />
         <TopProductsCard />
       </div>
-      <div className="flex gap-6">
+      <div className="2xl:flex-row flex flex-col gap-6">
         <SalesAndExpensesChart />
         <TopCategoriesPieChart />
       </div>

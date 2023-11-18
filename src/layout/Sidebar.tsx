@@ -18,7 +18,7 @@ export function Sidebar() {
       <div
         className={cn(
           true ? "hidden" : "mt-16 border-t lg:border-t-0 lg:mt-0",
-          "fixed z-50 overflow-y-scroll lg:overflow-hidden lg:flex left-0 h-screen  w-[240px] bg-background  ",
+          "fixed z-50 overflow-y-scroll lg:overflow-hidden xl:flex left-0 h-screen  w-[240px] bg-background  ",
         )}
       >
         <div className="flex  w-full flex-col items-center ">

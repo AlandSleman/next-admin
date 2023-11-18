@@ -41,14 +41,14 @@ export function MonthlySalesChart() {
   const theme = themes.find((theme) => theme.name === state.theme);
 
   return (
-    <Card className="w-[800px]">
+    <Card className="2xl:w-[800px] w-full">
       <CardHeader>
         <CardTitle>Monthly Sales</CardTitle>
         <CardDescription>
           Track monthly sales trends over the past year to identify peak months.
         </CardDescription>
       </CardHeader>
-      <CardContent className="pb-4">
+      <CardContent className="pb-4 p-0 sm:p-6">
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart

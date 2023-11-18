@@ -33,9 +33,9 @@ export default function RootLayout({
         >
           <ThemeWrapper>
             <Sidebar />
-            <div className="relative  lg:ml-[240px] flex min-h-screen flex-col">
+            <div className="relative xl:ml-[240px] flex min-h-screen flex-col">
               <SiteHeader />
-              <main className="p-8 bg-muted/50">{children}</main>
+              <main className="md:p-8 bg-muted/50">{children}</main>
             </div>
             <ThemeSwitcher />
             <TailwindIndicator />

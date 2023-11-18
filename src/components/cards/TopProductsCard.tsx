@@ -27,7 +27,7 @@ const data = [
 export function TopProductsCard() {
 
   return (
-    <Card className="w-[800px]">
+    <Card className="2xl:w-[800px] w-full">
       <CardHeader>
         <CardTitle>Top Products</CardTitle>
         <CardDescription>

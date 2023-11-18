@@ -30,7 +30,7 @@ export function SalesCard() {
 
   const theme = themes.find((theme) => theme.name === state.theme);
   return (
-    <Card className="w-[600px]">
+    <Card className="2xl:w-[600px] w-[300px]">
       <CardContent className="flex p-4 justify-center h-full">
         <div className="flex justify-center h-full flex-col">
           <CircleDollarSign className="w-16 text-primary h-16 bg-primary/20 rounded-full p-2" />
@@ -39,12 +39,12 @@ export function SalesCard() {
           </span>
           <span className="text-4xl font-bold">86,000</span>
           <span className="text-green-500 font-semibold ml-1 flex gap-2">
-            Over the past year 21%
+            Over past year 21%
             <TrendingUp />
           </span>
         </div>
 
-        <div className="h-[200px] w-[300px]">
+        <div className="h-[200px] hidden 2xl:block w-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={data}

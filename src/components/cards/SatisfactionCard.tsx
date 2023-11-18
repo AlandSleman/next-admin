@@ -12,7 +12,7 @@ export function SatisfactionCard() {
         </span>
         <span className="text-4xl font-bold">15,000</span>
         <span className="text-green-500 font-semibold ml-1 flex gap-2">
-          Over the last year +2100
+          Over past year +2100
           <TrendingUp />
         </span>
       </CardContent>

@@ -36,7 +36,7 @@ const colors = ["#FF6B6B", "#E768D1", "#72C94C", "#118AB2", "#EF8340"];
 
 export function TopCategoriesPieChart() {
   return (
-    <Card className="w-[800px]">
+    <Card className="2xl:w-[800px] w-full">
       <CardHeader>
         <CardTitle>Top Categories</CardTitle>
         <CardDescription>
@@ -45,7 +45,7 @@ export function TopCategoriesPieChart() {
       </CardHeader>
       <CardContent className="pb-4">
         <div className="h-[300px]">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="99%" height="100%">
             <PieChart>
               <Pie
                 data={topProductsData}
