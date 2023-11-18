@@ -3,7 +3,6 @@ import { useTheme } from "next-themes";
 import {
   XAxis,
   YAxis,
-  CartesianGrid,
   Legend,
   ResponsiveContainer,
   BarChart,
@@ -35,7 +34,7 @@ const data = [
   { month: "Dec", sales: 24000, salesPrevYear: 21000 },
 ];
 
-export function ProductSalesChart() {
+export function MonthlySalesChart() {
   const { theme: mode } = useTheme();
   const state = useAppState();
 
@@ -82,19 +81,12 @@ export function ProductSalesChart() {
                 content={({ active, payload }) => {
                   if (active && payload && payload.length) {
                     return (
-                      <div className="flex flex-col rounded-lg border bg-background p-3 shadow-sm">
-                        <span className="font-bold">
+                      <div className="flex font-bold flex-col rounded-lg border bg-background p-3 shadow-sm">
+                        <span className="text-muted-foreground">
                           {payload[0].payload.month}
                         </span>
-                        <span className="font-bold">
-                          {payload[0].payload.product}
-                        </span>
-                        <span className="font-bold">
-                          This Year: {payload[0].value}
-                        </span>
-                        <span className="font-bold">
-                          Previous Year: {payload[0].value}
-                        </span>
+                        <span>This Year: {payload[0].value}</span>
+                        <span>Previous Year: {payload[0].value}</span>
                       </div>
                     );
                   }

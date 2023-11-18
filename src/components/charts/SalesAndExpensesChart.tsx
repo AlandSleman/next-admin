@@ -1,17 +1,13 @@
 "use client";
-import { useTheme } from "next-themes";
 
 import {
   ResponsiveContainer,
-  LineChart,
   AreaChart,
-  Line,
-  XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   Area,
+  XAxis,
 } from "recharts";
 
 import {
@@ -21,8 +17,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { themes } from "@/registry/themes";
-import { useAppState } from "@/state/appState";
 
 const monthlySalesData = [
   { month: "Jan", sales: 12000, expenses: 8000 },
@@ -39,14 +33,9 @@ const monthlySalesData = [
   { month: "Dec", sales: 28000, expenses: 14000 },
 ];
 
-export function SalesChart() {
-  const { theme: mode } = useTheme();
-  const state = useAppState();
-
-  const theme = themes.find((theme) => theme.name === state.theme);
-
+export function SalesAndExpensesChart() {
   return (
-    <Card className="w-[950px]">
+    <Card className="w-[800px]">
       <CardHeader>
         <CardTitle>Sales and Expenses</CardTitle>
         <CardDescription>
@@ -63,33 +52,35 @@ export function SalesChart() {
               data={monthlySalesData}
               margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
             >
+              <defs>
+                <linearGradient id="expensesColor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#E33730" stopOpacity={0.7} />
+                  <stop offset="95%" stopColor="#E33730" stopOpacity={0} />
+                </linearGradient>
+                <linearGradient id="salesColor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.7} />
+                  <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
+                </linearGradient>
+              </defs>
               <YAxis />
-
-
+              <XAxis dataKey="month" />
               <Area
                 type="monotone"
                 dataKey="sales"
                 name="Sales"
-                stroke={`hsl(${theme?.cssVars[
-                  mode === "dark" ? "dark" : "light"
-                ].primary})`}
-                fill={`hsl(${theme?.cssVars[
-                  mode === "dark" ? "dark" : "light"
-                ].primary})`}
+                stroke="#82ca9d"
+                fillOpacity={1}
+                fill="url(#salesColor)"
               />
               <Area
                 type="monotone"
+                stroke="#E33730"
                 dataKey="expenses"
+                fillOpacity={1}
+                fill="url(#expensesColor)"
                 name="Expenses"
-                stroke={`hsl(${theme?.cssVars[
-                  mode === "dark" ? "dark" : "light"
-                ].primary})`}
-                fill={`hsl(${theme?.cssVars[
-                  mode === "dark" ? "dark" : "light"
-                ].primary})`}
-                fillOpacity={0.45}
               />
-              <Legend/>
+              <Legend />
               <Tooltip
                 content={({ active, payload }) => {
                   if (active && payload && payload.length) {
@@ -97,7 +88,7 @@ export function SalesChart() {
                       <div className="rounded-lg border bg-background p-2 shadow-sm">
                         <div className="grid grid-cols-2 gap-2">
                           <div className="flex flex-col">
-                            <span className="text-[0.70rem] uppercase text-muted-foreground">
+                            <span className="text-xs font-bold uppercase text-muted-foreground">
                               Sales
                             </span>
                             <span className="font-bold">
@@ -105,10 +96,10 @@ export function SalesChart() {
                             </span>
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-[0.70rem] uppercase text-muted-foreground">
+                            <span className="text-xs font-bold uppercase text-muted-foreground">
                               Expenses
                             </span>
-                            <span className="font-bold text-muted-foreground">
+                            <span className="font-bold">
                               {payload[1].value}
                             </span>
                           </div>

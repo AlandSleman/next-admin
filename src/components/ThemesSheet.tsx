@@ -22,10 +22,10 @@ export function ThemesSheet() {
   const { resolvedTheme: mode } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-  if (!mounted) return null;
+  // React.useEffect(() => {
+  //   setMounted(true);
+  // }, []);
+  // if (!mounted) return null;
 
   return (
     <Sheet>
@@ -48,7 +48,6 @@ export function ThemesSheet() {
             return (
               <div key={color}>
                 {color}
-                <p></p>
 
                 <button
                   onClick={() => updateAppState({ theme: theme.name })}

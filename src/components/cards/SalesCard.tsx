@@ -2,19 +2,26 @@
 import { CircleDollarSign, TrendingUp } from "lucide-react";
 
 import { useTheme } from "next-themes";
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import {
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import { Card, CardContent } from "@/components/ui/card";
 import { themes } from "@/registry/themes";
 import { useAppState } from "@/state/appState";
 
 const data = [
-  { month: "Jan", average: 400, target: 240 },
-  { month: "Feb", average: 300, target: 139 },
-  { month: "Mar", average: 200, target: 480 },
-  { month: "Apr", average: 278, target: 390 },
-  { month: "May", average: 189, target: 480 },
-  { month: "Jun", average: 239, target: 380 },
-  { month: "Jul", average: 349, target: 430 },
+  { month: "Jan", sales: 4000, target: 5000 },
+  { month: "Feb", sales: 4500, target: 5500 },
+  { month: "Mar", sales: 4000, target: 5200 },
+  { month: "Apr", sales: 5200, target: 5800 },
+  { month: "May", sales: 4800, target: 5600 },
+  { month: "Jun", sales: 5500, target: 5900 },
+  { month: "Jul", sales: 6000, target: 6600 },
 ];
 
 export function SalesCard() {
@@ -30,9 +37,9 @@ export function SalesCard() {
           <span className="text-2xl text-muted-foreground font-bold">
             Sales
           </span>
-          <span className="text-4xl font-bold">$ 100,000</span>
+          <span className="text-4xl font-bold">86,000</span>
           <span className="text-green-500 font-semibold ml-1 flex gap-2">
-            Over the last year 21%
+            Over the past year 21%
             <TrendingUp />
           </span>
         </div>
@@ -48,7 +55,8 @@ export function SalesCard() {
                 bottom: 0,
               }}
             >
-              <XAxis dataKey="month"/>
+              <XAxis dataKey="month" />
+              <YAxis hide domain={[3000, 7000]} />
               <Tooltip
                 cursor={{
                   fill: `hsl(${theme?.cssVars[
@@ -67,7 +75,7 @@ export function SalesCard() {
                           {payload[0].payload.product}
                         </span>
                         <span className="font-bold">
-                          Average: {payload[0].value}
+                          Sales: {payload[1].value}
                         </span>
                         <span className="font-bold">
                           Target: {payload[0].value}
@@ -81,7 +89,7 @@ export function SalesCard() {
               <Line
                 type="monotone"
                 strokeWidth={2}
-                dataKey="average"
+                dataKey="target"
                 activeDot={{
                   r: 6,
                   style: { fill: "var(--theme-primary)", opacity: 0.25 },
@@ -98,7 +106,7 @@ export function SalesCard() {
               />
               <Line
                 type="monotone"
-                dataKey="target"
+                dataKey="sales"
                 strokeWidth={2}
                 activeDot={{
                   r: 8,

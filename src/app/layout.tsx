@@ -9,6 +9,7 @@ import { ThemeWrapper } from "@/components/ThemeWrapper";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Sidebar } from "@/layout/Sidebar";
 import { SiteHeader } from "@/layout/SiteHeader";
+import { TailwindIndicator } from "@/components/TailwndIndicator";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,7 @@ export default function RootLayout({
               <main className="p-8 bg-muted/50">{children}</main>
             </div>
             <ThemeSwitcher />
+            <TailwindIndicator />
           </ThemeWrapper>
         </ThemeProvider>
       </body>

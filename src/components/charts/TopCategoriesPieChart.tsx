@@ -28,23 +28,15 @@ const data = [
   { product: "Beauty Products", sales: 19000 },
 ];
 
-const colors = ["#FF6B6B", "#E768D1", "green", "#118AB2", "#EF8340"];
+const sortedData = [...data].sort((a, b) => b.sales - a.sales);
 
-export function TopProductsPieChart() {
-  const topProducts = [
-    "Electronics",
-    "Home Goods",
-    "Furniture",
-    "Clothing",
-    "Toys",
-  ];
+const topProductsData = sortedData.slice(0, 5);
 
-  const topProductsData = data.filter((entry) =>
-    topProducts.includes(entry.product),
-  );
+const colors = ["#FF6B6B", "#E768D1", "#72C94C", "#118AB2", "#EF8340"];
 
+export function TopCategoriesPieChart() {
   return (
-    <Card className="w-[600px]">
+    <Card className="w-[800px]">
       <CardHeader>
         <CardTitle>Top Categories</CardTitle>
         <CardDescription>
@@ -74,7 +66,25 @@ export function TopProductsPieChart() {
                   <Cell key={entry.product} fill={colors[index]} />
                 ))}
               </Pie>
-              <Tooltip />
+              <Tooltip
+                content={({ active, payload }) => {
+                  if (active && payload && payload.length) {
+                    return (
+                      <div className="rounded-lg border bg-background p-2 shadow-sm">
+                        <div className="flex flex-col">
+                          <span className="font-bold text-muted-foreground">
+                            {payload[0].payload.product}
+                          </span>
+                          <span className="font-bold">
+                            Sales: {payload[0].value}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  }
+                  return null;
+                }}
+              />
               <Legend
                 formatter={(_, entry) => (
                   // @ts-ignore

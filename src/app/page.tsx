@@ -1,13 +1,11 @@
-import { CardsMetric } from "@/components/charts/CardMetrics";
-import { BalanceBarChart } from "@/components/charts/LineChart";
-import { SalesCard } from "@/components/dashboard1/Cards";
-import { SatisfactionCard } from "@/components/dashboard1/SatisfactionCard";
-import { ExpensesCard } from "@/components/dashboard1/ExpensesCard";
-import { ProductsCard } from "@/components/dashboard1/ProductsCard";
-import { ProductSalesChart } from "@/components/dashboard1/ProductSalesChart";
-import { SalesChart } from "@/components/dashboard1/SalesChart";
-import { TopCountriesCard } from "@/components/dashboard1/TopCountriesCard";
-import { TopProductsPieChart } from "@/components/dashboard1/TopProductsPieChart";
+import { SalesCard } from "@/components/cards/SalesCard";
+import { SatisfactionCard } from "@/components/cards/SatisfactionCard";
+import { ExpensesCard } from "@/components/cards/ExpensesCard";
+import { ProductsCard } from "@/components/cards/ProductsCard";
+import { MonthlySalesChart } from "@/components/charts/ProductSalesChart";
+import { SalesAndExpensesChart } from "@/components/charts/SalesAndExpensesChart";
+import { TopProductsCard } from "@/components/cards/TopProductsCard";
+import { TopCategoriesPieChart } from "@/components/charts/TopCategoriesPieChart";
 
 export default function Home() {
   return (
@@ -19,12 +17,12 @@ export default function Home() {
         <ExpensesCard />
       </div>
       <div className="flex gap-6">
-        <ProductSalesChart />
-        <TopCountriesCard />
+        <MonthlySalesChart />
+        <TopProductsCard />
       </div>
       <div className="flex gap-6">
-        <SalesChart />
-        <TopProductsPieChart />
+        <SalesAndExpensesChart />
+        <TopCategoriesPieChart />
       </div>
     </main>
   );
