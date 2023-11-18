@@ -43,7 +43,7 @@ export function TopCategoriesPieChart() {
           Illustrating the top 5 categories with a Pie chart.
         </CardDescription>
       </CardHeader>
-      <CardContent className="pb-4">
+      <CardContent className="p-0 sm:p-6 pb-4">
         <div className="h-[300px]">
           <ResponsiveContainer width="99%" height="100%">
             <PieChart>

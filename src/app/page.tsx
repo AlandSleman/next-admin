@@ -9,7 +9,7 @@ import { TopCategoriesPieChart } from "@/components/charts/TopCategoriesPieChart
 
 export default function Home() {
   return (
-    <main className="bg-background sm:p-6 py-6 space-y-6 rounded-lg">
+    <main className="bg-background sm:p-6 p-1 py-6 space-y-6 rounded-lg">
       <div className="flex lg:flex-nowrap flex-wrap md:justify-between justify-center gap-8">
         <SalesCard />
         <ProductsCard />
