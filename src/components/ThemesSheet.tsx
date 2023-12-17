@@ -30,14 +30,14 @@ export function ThemesSheet() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline">Theme</Button>
       </SheetTrigger>
-      <SheetContent bgTransparent side="right">
+      <SheetContent className="flex-col" bgTransparent side="right">
         <SheetHeader>
           <SheetTitle>Change Theme</SheetTitle>
-          <SheetDescription>Select Theme</SheetDescription>
+          <SheetDescription className="text-lg font-bold">Select Theme</SheetDescription>
         </SheetHeader>
-        <SheetFooter>
+        <div className="flex gap-2">
           {["slate", "rose", "blue", "green", "orange"].map((color) => {
             const theme = themes.find((theme) => theme.name === color);
             const isActive = appState.theme === color;
@@ -76,7 +76,7 @@ export function ThemesSheet() {
               </div>
             );
           })}
-        </SheetFooter>
+        </div>
       </SheetContent>
     </Sheet>
   );

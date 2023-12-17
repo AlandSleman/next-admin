@@ -41,31 +41,31 @@ export function Sidebar() {
               ))}
             </div>
           </div>
-          <div className="flex w-full px-4 flex-col gap-1.5">
-            <div className="flex text-slate-400 font-medium justify-between">
-              <p>Storage</p>
-              <p className="text-sky-400">10%</p>
-            </div>
-            <Progress className="h-2 bg-black" value={10} />
-            <p className="text-[13.5px] font-semibold">
-              <span className="text-sky-400 font-semibold">10MB</span> of
-              <span className="font-semibold">&nbsp;500 MB</span>
-            </p>
-          </div>
+          {/* <div className="flex w-full px-4 flex-col gap-1.5"> */}
+          {/*   <div className="flex text-slate-400 font-medium justify-between"> */}
+          {/*     <p>Storage</p> */}
+          {/*     <p className="text-sky-400">10%</p> */}
+          {/*   </div> */}
+          {/*   <Progress className="h-2 bg-black" value={10} /> */}
+          {/*   <p className="text-[13.5px] font-semibold"> */}
+          {/*     <span className="text-sky-400 font-semibold">10MB</span> of */}
+          {/*     <span className="font-semibold">&nbsp;500 MB</span> */}
+          {/*   </p> */}
+          {/* </div> */}
 
-          <a
-            href="https://github.com/AlandSleman/StorageBox"
-            target="_blank"
-            className={cn(
-              "transition-colors bg-primary w-full gap-2 font-semibold px-6 py-3.5  duration-300 cursor-pointer flex flex-row items-center",
-              false
-                ? "bg-gradient-to-r from-blue-600/90 to-blue-600/10  hover:from-blue-600 hover:to-blue-600/20"
-                : "hover:bg-blue-700/80",
-            )}
-          >
-            <Github className="" />
-            Source Code
-          </a>
+          {/* <a */}
+          {/*   href="https://github.com/AlandSleman/StorageBox" */}
+          {/*   target="_blank" */}
+          {/*   className={cn( */}
+          {/*     "transition-colors bg-primary w-full gap-2 font-semibold px-6 py-3.5  duration-300 cursor-pointer flex flex-row items-center", */}
+          {/*     false */}
+          {/*       ? "bg-gradient-to-r from-blue-600/90 to-blue-600/10  hover:from-blue-600 hover:to-blue-600/20" */}
+          {/*       : "hover:bg-blue-700/80", */}
+          {/*   )} */}
+          {/* > */}
+          {/*   <Github className="" /> */}
+          {/*   Source Code */}
+          {/* </a> */}
         </div>
       </div>
     </>
